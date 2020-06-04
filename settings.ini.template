@@ -1,0 +1,10 @@
+[settings]
+
+GET_URL=http://loxone/dev/sps/io/sonar_1/state
+GET_USER=loxone_user_name
+GET_PASSWORD=loxone_password
+
+INFLUXDB_URL=http://100.100.100.123:8086/write?db=mydb
+INFLUXDB_USER=influxdb_user_name
+INFLUXDB_PASSWORD=influxdb_password
+INFLUXDB_DATA_PREFIX=my_influx_data_point_name
