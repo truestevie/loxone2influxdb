@@ -26,14 +26,15 @@ if tree.attrib.get('Code') != "200":
     sys.exit()
 
 value = float(tree.attrib.get('value'))
+recalculated_value = 10 - value
 
-print(f"[+] Retrieved value: {value}")
+print(f"[+] Retrieved value: {recalculated_value}")
 
 try:
     response = requests.post(
         url=settings.INFLUXDB_URL,
         headers={"Content-type": "text:plain"},
-        data=f"{settings.INFLUXDB_DATA_PREFIX} value={value}",
+        data=f"{settings.INFLUXDB_DATA_PREFIX} value={recalculated_value}",
         auth=(settings.INFLUXDB_USER, settings.INFLUXDB_PASSWORD),
     )
 except requests.exceptions.ConnectionError:
